@@ -6,30 +6,33 @@ package com.mycompany.paradigmas_proyecto_final.dao;
 
 import com.mycompany.paradigmas_proyecto_final.database.MySQLConnection;
 import com.mycompany.paradigmas_proyecto_final.models.Sintoma;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SintomaDAO {
 
+    /**
+     * Obtiene todos los síntomas.
+     */
     public List<Sintoma> getAll() {
         List<Sintoma> lista = new ArrayList<>();
 
         String sql = "SELECT id, nombre, descripcion FROM sintoma";
-        
+
         try {
             Connection conn = MySQLConnection.getInstance().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
-            
+
             ResultSet rs = ps.executeQuery();
-            
+
             while (rs.next()) {
-                Sintoma s = new Sintoma(
+                lista.add(new Sintoma(
                         rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("descripcion")
-                );
-                lista.add(s);
+                ));
             }
 
             rs.close();
@@ -42,6 +45,43 @@ public class SintomaDAO {
         return lista;
     }
 
+    /**
+     * Obtiene un síntoma por ID
+     */
+    public Sintoma getById(int id) {
+        Sintoma s = null;
+
+        String sql = "SELECT id, nombre, descripcion FROM sintoma WHERE id = ?";
+
+        try {
+            Connection conn = MySQLConnection.getInstance().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                s = new Sintoma(
+                        rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("descripcion")
+                );
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return s;
+    }
+
+    /**
+     * Obtiene síntomas asociados a una enfermedad
+     */
     public List<Sintoma> getByEnfermedad(int enfermedadId) {
         List<Sintoma> lista = new ArrayList<>();
 

@@ -26,9 +26,7 @@ public class DiagnosticoSintomaDAO {
             ps.executeUpdate();
             ps.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } catch (SQLException e) { e.printStackTrace(); }
     }
 
     public List<DiagnosticoSintoma> getByDiagnostico(int diagnosticoId) {
@@ -40,6 +38,32 @@ public class DiagnosticoSintomaDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
 
             ps.setInt(1, diagnosticoId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new DiagnosticoSintoma(
+                        rs.getInt("id"),
+                        rs.getInt("diagnostico_id"),
+                        rs.getInt("sintoma_id")
+                ));
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException e) { e.printStackTrace(); }
+
+        return lista;
+    }
+
+    /** NUEVO: obtener todas las relaciones */
+    public List<DiagnosticoSintoma> getAll() {
+        List<DiagnosticoSintoma> lista = new ArrayList<>();
+        String sql = "SELECT * FROM diagnostico_sintoma";
+
+        try {
+            Connection conn = MySQLConnection.getInstance().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

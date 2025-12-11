@@ -22,11 +22,11 @@ public class DiagnosticoEnfermedadDAO {
 
             ps.setInt(1, de.getDiagnosticoId());
             ps.setInt(2, de.getEnfermedadId());
-            if (de.getCoincidenciaPorcentaje() == null) {
+
+            if (de.getCoincidenciaPorcentaje() == null)
                 ps.setNull(3, Types.INTEGER);
-            } else {
+            else
                 ps.setInt(3, de.getCoincidenciaPorcentaje());
-            }
 
             ps.executeUpdate();
             ps.close();
@@ -45,6 +45,33 @@ public class DiagnosticoEnfermedadDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
 
             ps.setInt(1, diagnosticoId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new DiagnosticoEnfermedad(
+                        rs.getInt("id"),
+                        rs.getInt("diagnostico_id"),
+                        rs.getInt("enfermedad_id"),
+                        (Integer) rs.getObject("coincidencia_porcentaje")
+                ));
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException e) { e.printStackTrace(); }
+
+        return lista;
+    }
+
+    /** NUEVO: obtener todas las relaciones */
+    public List<DiagnosticoEnfermedad> getAll() {
+        List<DiagnosticoEnfermedad> lista = new ArrayList<>();
+        String sql = "SELECT * FROM diagnostico_enfermedad";
+
+        try {
+            Connection conn = MySQLConnection.getInstance().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

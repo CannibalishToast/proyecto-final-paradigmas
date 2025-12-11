@@ -41,5 +41,11 @@ public class Paciente {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    @Override
+    public String toString() {
+        return id + " - " + nombre;
+    }
 }
+
 
