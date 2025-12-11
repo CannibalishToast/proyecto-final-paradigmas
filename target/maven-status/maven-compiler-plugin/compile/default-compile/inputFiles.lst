@@ -13,9 +13,11 @@ C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\sr
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Sintoma.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\prolog\PrologQueryExecutor.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Categoria.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\service\ReportService.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\DiagnosticoEnfermedad.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Diagnostico.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\service\HistorialService.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\service\EstadisticasService.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\ui\PanelDiagnostico.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\dao\PrologDiagnosticoDAO.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\TestDAO.java
@@ -29,6 +31,8 @@ C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\sr
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\ui\PanelReportes.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\ui\MainWindow.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\EnfermedadSintoma.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\dto\EstadisticaItem.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Enfermedad.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\ui\PanelRegistrarPaciente.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\service\DiagnosticoService.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\dao\CategoriaDAO.java

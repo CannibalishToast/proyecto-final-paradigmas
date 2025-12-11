@@ -1,3 +1,4 @@
+com\mycompany\paradigmas_proyecto_final\service\ReportService.class
 com\mycompany\paradigmas_proyecto_final\TestDAO.class
 com\mycompany\paradigmas_proyecto_final\TestFlujoCompleto.class
 com\mycompany\paradigmas_proyecto_final\TestJPL.class
@@ -15,11 +16,14 @@ com\mycompany\paradigmas_proyecto_final\dao\SintomaDAO.class
 com\mycompany\paradigmas_proyecto_final\models\EnfermedadSintoma.class
 com\mycompany\paradigmas_proyecto_final\service\DiagnosticoService$ResultadoDiagnostico.class
 com\mycompany\paradigmas_proyecto_final\service\DiagnosticoService.class
+com\mycompany\paradigmas_proyecto_final\ui\PanelRegistrarPaciente.class
 com\mycompany\paradigmas_proyecto_final\dao\PrologDiagnosticoDAO.class
 com\mycompany\paradigmas_proyecto_final\ui\PanelDiagnostico.class
 com\mycompany\paradigmas_proyecto_final\prolog\PrologQueryExecutor.class
+com\mycompany\paradigmas_proyecto_final\service\EstadisticasService.class
 com\mycompany\paradigmas_proyecto_final\ui\MainWindow.class
 com\mycompany\paradigmas_proyecto_final\models\dto\HistorialDetallado$EnfermedadResultado.class
+com\mycompany\paradigmas_proyecto_final\models\dto\EstadisticaItem.class
 com\mycompany\paradigmas_proyecto_final\prolog\FactsBuilder.class
 com\mycompany\paradigmas_proyecto_final\ui\PanelReportes.class
 com\mycompany\paradigmas_proyecto_final\dao\DiagnosticoDAO.class

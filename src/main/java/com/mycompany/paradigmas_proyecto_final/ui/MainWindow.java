@@ -21,6 +21,7 @@ public class MainWindow extends JFrame {
         tabs.addTab("Diagnóstico", new PanelDiagnostico());
         tabs.addTab("Historial", new PanelHistorial());
         tabs.addTab("Reportes", new PanelReportes());
+        tabs.addTab("Pacientes", new PanelRegistrarPaciente());
 
         add(tabs, BorderLayout.CENTER);
     }

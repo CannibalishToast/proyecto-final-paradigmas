@@ -4,11 +4,6 @@
  */
 package com.mycompany.paradigmas_proyecto_final.service;
 
-/**
- *
- * @author danie
- */
-
 import com.mycompany.paradigmas_proyecto_final.dao.*;
 import com.mycompany.paradigmas_proyecto_final.models.*;
 import com.mycompany.paradigmas_proyecto_final.models.dto.*;
@@ -33,9 +28,7 @@ public class HistorialService {
 
         for (Diagnostico d : diagnos) {
 
-            // -------------------------------------------
             // 1. Obtener síntomas usados en el diagnóstico
-            // -------------------------------------------
             List<DiagnosticoSintoma> sintDiag =
                     diagnosticoSintomaDAO.getByDiagnostico(d.getId());
 
@@ -47,9 +40,7 @@ public class HistorialService {
                     sintomas.add(s.getNombre());
             }
 
-            // -------------------------------------------
             // 2. Enfermedades asociadas
-            // -------------------------------------------
             List<DiagnosticoEnfermedad> enfDiag =
                     diagnosticoEnfermedadDAO.getByDiagnostico(d.getId());
 
@@ -82,9 +73,7 @@ public class HistorialService {
     }
 
     /**
-     * Método auxiliar para la GUI:
-     * Devuelve el historial "plano", es decir:
-     * cada enfermedad del diagnóstico aparece como una FILA.
+     * Devuelve historial plano para tablas: cada enfermedad = 1 fila.
      */
     public List<FilaHistorial> obtenerHistorialPlano(int pacienteId) {
 
@@ -110,8 +99,15 @@ public class HistorialService {
     }
 
     /**
-     * DTO simplificado para mostrar cada fila en la tabla de la GUI.
+     * NUEVO:
+     * Devuelve filas listas para exportar a CSV (por paciente).
      */
+    public List<HistorialDetallado> obtenerHistorialParaReporte(int pacienteId) {
+        return obtenerHistorialPaciente(pacienteId);
+    }
+
+
+    /** DTO para las filas del historial plano */
     public static class FilaHistorial {
         private int diagnosticoId;
         private java.time.LocalDateTime fecha;
