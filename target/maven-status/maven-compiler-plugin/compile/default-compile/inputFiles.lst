@@ -9,10 +9,14 @@ C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\sr
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Paciente.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\Paradigmas_proyecto_final.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\TestJPL.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\dao\EnfermedadSintomaDAO.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\TestProlog.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\dao\SintomaDAO.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\TestDB.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Sintoma.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\prolog\PrologQueryExecutor.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Categoria.java
+C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\prolog\FactsBuilder.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\DiagnosticoEnfermedad.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\Diagnostico.java
 C:\Users\danie\OneDrive\Documentos\NetBeansProjects\paradigmas_proyecto_final\src\main\java\com\mycompany\paradigmas_proyecto_final\models\EnfermedadSintoma.java
