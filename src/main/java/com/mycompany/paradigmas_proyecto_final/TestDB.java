@@ -4,6 +4,8 @@
  */
 package com.mycompany.paradigmas_proyecto_final;
 
+import com.mycompany.paradigmas_proyecto_final.database.MySQLConnection;
+
 public class TestDB {
     public static void main(String[] args) {
         MySQLConnection conn = MySQLConnection.getInstance();

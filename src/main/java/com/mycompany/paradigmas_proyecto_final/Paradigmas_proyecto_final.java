@@ -4,6 +4,8 @@
 
 package com.mycompany.paradigmas_proyecto_final;
 
+import com.mycompany.paradigmas_proyecto_final.dao.SintomaDAO;
+
 /**
  *
  * @author danie
@@ -11,6 +13,8 @@ package com.mycompany.paradigmas_proyecto_final;
 public class Paradigmas_proyecto_final {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+    SintomaDAO dao = new SintomaDAO();
+    dao.getAll().forEach(s -> System.out.println(s.getNombre()));
+}
+
 }
