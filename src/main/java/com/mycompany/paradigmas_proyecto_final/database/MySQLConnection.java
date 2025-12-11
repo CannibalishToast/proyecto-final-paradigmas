@@ -13,9 +13,7 @@ public class MySQLConnection {
     private static MySQLConnection instance;
     private Connection connection;
 
-    private final String URL = 
-    "jdbc:mysql://localhost:3306/sistema_experto?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
-
+    private final String URL = "jdbc:mysql://localhost:3306/sistema_experto";
     private final String USER = "root";
     private final String PASSWORD = "mc4A5T8d";
 

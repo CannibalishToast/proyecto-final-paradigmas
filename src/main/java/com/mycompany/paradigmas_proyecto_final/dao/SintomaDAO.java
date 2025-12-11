@@ -19,9 +19,6 @@ public class SintomaDAO {
         
         try {
             Connection conn = MySQLConnection.getInstance().getConnection();
-            System.out.println("¿Conexión cerrada? " + conn.isClosed());
-            System.out.println("SQL usado en SintomaDAO: >" + sql + "<");
-            System.out.println("Bytes: " + java.util.Arrays.toString(sql.getBytes()));
             PreparedStatement ps = conn.prepareStatement(sql);
             
             ResultSet rs = ps.executeQuery();
