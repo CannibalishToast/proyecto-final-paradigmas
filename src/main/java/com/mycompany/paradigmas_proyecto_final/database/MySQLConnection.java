@@ -18,12 +18,7 @@ public class MySQLConnection {
     private final String PASSWORD = "mc4A5T8d";
 
     private MySQLConnection() {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexión a MySQL exitosa.");
-        } catch (SQLException e) {
-            System.out.println("Error conectando a MySQL: " + e.getMessage());
-        }
+        conectar();
     }
 
     public static MySQLConnection getInstance() {
@@ -33,8 +28,25 @@ public class MySQLConnection {
         return instance;
     }
 
+    /** Abre la conexión si está cerrada */
+    private void conectar() {
+        try {
+            if (connection == null || connection.isClosed()) {
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println("Conexión a MySQL establecida.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error conectando a MySQL: " + e.getMessage());
+        }
+    }
+
+    /** Devuelve siempre la misma conexión mientras siga viva */
     public Connection getConnection() {
+        try {
+            if (connection == null || connection.isClosed()) {
+                conectar();
+            }
+        } catch (SQLException ignored) {}
         return connection;
     }
 }
-

@@ -7,7 +7,6 @@ package com.mycompany.paradigmas_proyecto_final.prolog;
 import com.mycompany.paradigmas_proyecto_final.dao.*;
 import com.mycompany.paradigmas_proyecto_final.models.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class FactsBuilder {
@@ -16,12 +15,19 @@ public class FactsBuilder {
     private final SintomaDAO sintomaDAO = new SintomaDAO();
     private final EnfermedadSintomaDAO enfermedadSintomaDAO = new EnfermedadSintomaDAO();
 
-    /** Carga archivo PL */
+    /** Cargar archivo PL */
     public void initProlog() {
         PrologQueryExecutor.loadPrologFile("src/main/resources/prolog/diagnostico.pl");
     }
 
-    /** Construye hechos para enfermedad(Id, Nombre). */
+    /** 🔥 Limpia la base dinámica dentro de Prolog */
+    public void limpiarBase() {
+        PrologQueryExecutor.createDynamicFact("retractall(enfermedad(_, _))");
+        PrologQueryExecutor.createDynamicFact("retractall(sintoma(_, _))");
+        PrologQueryExecutor.createDynamicFact("retractall(enfermedad_sintoma(_, _))");
+    }
+
+    /** Hechos: enfermedad(Id, Nombre) */
     public void construirFactsEnfermedades() {
         List<Enfermedad> lista = enfermedadDAO.getAll();
 
@@ -35,7 +41,7 @@ public class FactsBuilder {
         }
     }
 
-    /** Construye hechos para sintoma(Id, Nombre). */
+    /** Hechos: sintoma(Id, Nombre) */
     public void construirFactsSintomas() {
         List<Sintoma> lista = sintomaDAO.getAll();
 
@@ -49,10 +55,9 @@ public class FactsBuilder {
         }
     }
 
-    /** Construye enfermedad_sintoma(IdEnf, IdSint). */
+    /** Hechos: enfermedad_sintoma(IdEnf, IdSint) */
     public void construirFactsEnfermedadSintoma() {
-        EnfermedadSintomaDAO dao = new EnfermedadSintomaDAO();
-        List<EnfermedadSintoma> lista = dao.getAll();
+        List<EnfermedadSintoma> lista = enfermedadSintomaDAO.getAll();
 
         for (EnfermedadSintoma es : lista) {
             String fact = String.format(
@@ -64,8 +69,9 @@ public class FactsBuilder {
         }
     }
 
-    /** Construye TODO */
+    /** Construye TODO — limpio, seguro, sin duplicados */
     public void construirTodo() {
+        limpiarBase(); // <-- 🔥 clave para evitar hechos duplicados
         construirFactsEnfermedades();
         construirFactsSintomas();
         construirFactsEnfermedadSintoma();
