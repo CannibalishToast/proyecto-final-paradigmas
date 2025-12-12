@@ -20,15 +20,13 @@ public class PrologDiagnosticoDAO {
 
     private static boolean prologCargado = false;
 
-    /* ============================================================
-       1. Inicialización de Prolog (archivo + hechos dinámicos)
-       ============================================================ */
+
     public static void inicializarProlog() {
         if (prologCargado) return; // evitar doble carga
 
-        /* ---------------------------------------------------------
-           1. UBICAR diagnostico.pl EN RESOURCES/PROLOG
-           --------------------------------------------------------- */
+
+          //1 ubicar diagnostico.pl
+
         URL url = PrologDiagnosticoDAO.class
                 .getClassLoader()
                 .getResource("prolog/diagnostico.pl");
@@ -57,17 +55,11 @@ public class PrologDiagnosticoDAO {
         }
         cargarArchivo.close();
 
-        /* ---------------------------------------------------------
-           2. Cargar hechos dinámicos desde MySQL
-           --------------------------------------------------------- */
         cargarHechosDesdeBD();
 
         prologCargado = true;
     }
 
-    /* ============================================================
-       2. Cargar hechos enfermedad/2, sintoma/2, enfermedad_sintoma/2
-       ============================================================ */
     private static void cargarHechosDesdeBD() {
 
         EnfermedadDAO enfermedadDAO = new EnfermedadDAO();
@@ -109,9 +101,7 @@ public class PrologDiagnosticoDAO {
         }
     }
 
-    /* ============================================================
-       3. Ejecutar el diagnóstico real en Prolog
-       ============================================================ */
+       //3 Ejecutar el diagnóstico real en Prolog
     public static List<ResultadoDiagnosticoProlog> diagnosticar(List<Integer> sintomasUsuario) {
 
         inicializarProlog(); // <-- YA FUNCIONAL
@@ -137,9 +127,7 @@ public class PrologDiagnosticoDAO {
         return resultados;
     }
 
-    /* ============================================================
-       4. DTO interno
-       ============================================================ */
+
     public static class ResultadoDiagnosticoProlog {
         private int enfermedadId;
         private double porcentaje;

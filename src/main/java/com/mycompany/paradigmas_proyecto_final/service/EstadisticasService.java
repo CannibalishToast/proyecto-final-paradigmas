@@ -20,9 +20,7 @@ public class EstadisticasService {
     private EnfermedadDAO enfermedadDAO = new EnfermedadDAO();
     private SintomaDAO sintomaDAO = new SintomaDAO();
 
-    // ===============================================================
     // ESTADÍSTICAS GLOBALES
-    // ===============================================================
     public List<EstadisticaItem> enfermedadesMasComunes() {
         List<EstadisticaItem> lista = new ArrayList<>();
 
@@ -47,9 +45,7 @@ public class EstadisticasService {
         return lista;
     }
 
-    // ===============================================================
     // ESTADÍSTICAS INDIVIDUALES POR PACIENTE
-    // ===============================================================
 
     public int totalDiagnosticosPaciente(int pacienteId) {
         return diagnosticoDAO.getByPaciente(pacienteId).size();

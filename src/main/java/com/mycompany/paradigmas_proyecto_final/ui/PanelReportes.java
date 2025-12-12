@@ -31,9 +31,7 @@ public class PanelReportes extends JPanel {
         titulo.setFont(new Font("Arial", Font.BOLD, 22));
         add(titulo, BorderLayout.NORTH);
 
-        // ===============================
         // PANEL SUPERIOR CON CONTROLES
-        // ===============================
         JPanel panelTop = new JPanel();
 
         comboPacientes = new JComboBox<>();
@@ -49,9 +47,7 @@ public class PanelReportes extends JPanel {
 
         add(panelTop, BorderLayout.NORTH);
 
-        // ===============================
-        // TABLA DE HISTORIAL
-        // ===============================
+        // TABLA DE HISTORIAL 
         tablaHistorial = new JTable();
         tablaHistorial.setModel(new DefaultTableModel(
                 new Object[][]{},
@@ -59,10 +55,6 @@ public class PanelReportes extends JPanel {
         ));
 
         add(new JScrollPane(tablaHistorial), BorderLayout.CENTER);
-
-        // ===============================
-        // EVENTOS
-        // ===============================
 
         btnVer.addActionListener(e -> cargarHistorial());
 

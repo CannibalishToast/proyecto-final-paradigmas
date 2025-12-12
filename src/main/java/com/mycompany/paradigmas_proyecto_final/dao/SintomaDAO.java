@@ -13,9 +13,6 @@ import java.util.List;
 
 public class SintomaDAO {
 
-    /**
-     * Obtiene todos los síntomas.
-     */
     public List<Sintoma> getAll() {
         List<Sintoma> lista = new ArrayList<>();
 
@@ -45,9 +42,6 @@ public class SintomaDAO {
         return lista;
     }
 
-    /**
-     * Obtiene un síntoma por ID
-     */
     public Sintoma getById(int id) {
         Sintoma s = null;
 
@@ -79,9 +73,6 @@ public class SintomaDAO {
         return s;
     }
 
-    /**
-     * Obtiene síntomas asociados a una enfermedad
-     */
     public List<Sintoma> getByEnfermedad(int enfermedadId) {
         List<Sintoma> lista = new ArrayList<>();
 

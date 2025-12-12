@@ -8,7 +8,7 @@ import org.jpl7.Query;
 
 public class PrologQueryExecutor {
 
-    /** Carga el archivo PL */
+
     public static void loadPrologFile(String path) {
         String consulta = "consult('" + path.replace("\\", "/") + "')";
         Query q = new Query(consulta);
@@ -18,7 +18,6 @@ public class PrologQueryExecutor {
         System.out.println("Archivo Prolog cargado: " + path);
     }
 
-    /** Inserta un hecho dinámico tipo assertz(...) */
     public static void createDynamicFact(String fact) {
         Query q = new Query(fact);
         if (q.hasSolution()) {
@@ -28,7 +27,6 @@ public class PrologQueryExecutor {
         }
     }
 
-    /** Escapa strings para Prolog */
     public static String toAtom(String s) {
         if (s == null) return "''";
         String safe = s

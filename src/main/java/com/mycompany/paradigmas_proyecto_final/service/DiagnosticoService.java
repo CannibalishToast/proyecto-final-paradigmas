@@ -16,9 +16,7 @@ public class DiagnosticoService {
     private DiagnosticoSintomaDAO diagnosticoSintomaDAO = new DiagnosticoSintomaDAO();
     private EnfermedadDAO enfermedadDAO = new EnfermedadDAO();
 
-    /**
-     * Ejecuación completa del diagnóstico.
-     */
+
     public List<ResultadoDiagnostico> realizarDiagnostico(int pacienteId, List<Integer> sintomasSeleccionados) {
 
         // 1. Ejecutar Prolog

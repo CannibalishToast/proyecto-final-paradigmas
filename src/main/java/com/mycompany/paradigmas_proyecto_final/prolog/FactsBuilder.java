@@ -15,19 +15,16 @@ public class FactsBuilder {
     private final SintomaDAO sintomaDAO = new SintomaDAO();
     private final EnfermedadSintomaDAO enfermedadSintomaDAO = new EnfermedadSintomaDAO();
 
-    /** Cargar archivo PL */
     public void initProlog() {
         PrologQueryExecutor.loadPrologFile("src/main/resources/prolog/diagnostico.pl");
     }
 
-    /** 🔥 Limpia la base dinámica dentro de Prolog */
     public void limpiarBase() {
         PrologQueryExecutor.createDynamicFact("retractall(enfermedad(_, _))");
         PrologQueryExecutor.createDynamicFact("retractall(sintoma(_, _))");
         PrologQueryExecutor.createDynamicFact("retractall(enfermedad_sintoma(_, _))");
     }
 
-    /** Hechos: enfermedad(Id, Nombre) */
     public void construirFactsEnfermedades() {
         List<Enfermedad> lista = enfermedadDAO.getAll();
 
@@ -41,7 +38,6 @@ public class FactsBuilder {
         }
     }
 
-    /** Hechos: sintoma(Id, Nombre) */
     public void construirFactsSintomas() {
         List<Sintoma> lista = sintomaDAO.getAll();
 
@@ -55,7 +51,6 @@ public class FactsBuilder {
         }
     }
 
-    /** Hechos: enfermedad_sintoma(IdEnf, IdSint) */
     public void construirFactsEnfermedadSintoma() {
         List<EnfermedadSintoma> lista = enfermedadSintomaDAO.getAll();
 
@@ -69,9 +64,8 @@ public class FactsBuilder {
         }
     }
 
-    /** Construye TODO — limpio, seguro, sin duplicados */
     public void construirTodo() {
-        limpiarBase(); // <-- 🔥 clave para evitar hechos duplicados
+        limpiarBase(); 
         construirFactsEnfermedades();
         construirFactsSintomas();
         construirFactsEnfermedadSintoma();

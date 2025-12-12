@@ -38,9 +38,7 @@ public class PanelHistorial extends JPanel {
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         add(titulo, BorderLayout.NORTH);
 
-        // ==========================================================
         // PANEL SUPERIOR: PACIENTE + BOTONES
-        // ==========================================================
         JPanel panelSuperior = new JPanel(new FlowLayout(FlowLayout.LEFT));
         panelSuperior.add(new JLabel("Paciente:"));
 
@@ -58,9 +56,7 @@ public class PanelHistorial extends JPanel {
 
         add(panelSuperior, BorderLayout.NORTH);
 
-        // ==========================================================
         // TABLA HISTORIAL
-        // ==========================================================
         tablaHistorial = new JTable(new DefaultTableModel(
                 new Object[][]{},
                 new String[]{"Fecha", "Enfermedad", "Coincidencia (%)", "Recomendación"}
@@ -72,9 +68,7 @@ public class PanelHistorial extends JPanel {
         JScrollPane scrollTabla = new JScrollPane(tablaHistorial);
         scrollTabla.setBorder(BorderFactory.createTitledBorder("Historial del paciente"));
 
-        // ==========================================================
         // PANEL INFERIOR → ESTADÍSTICAS + SÍNTOMAS
-        // ==========================================================
         JPanel panelInferior = new JPanel(new GridLayout(1, 3));
 
         areaSintomas = new JTextArea(6, 20);
@@ -107,26 +101,20 @@ public class PanelHistorial extends JPanel {
         add(splitPane, BorderLayout.CENTER);
     }
 
-    // ==========================================================
-    // CARGAR PACIENTES UNA VEZ
-    // ==========================================================
+
     private void cargarPacientes() {
         comboPacientes.removeAllItems();
         for (Paciente p : pacienteDAO.getAll())
             comboPacientes.addItem(p);
     }
 
-    // ==========================================================
-    // REFRESCAR LISTA DE PACIENTES (CALL DESDE BOTÓN)
-    // ==========================================================
+
     private void refrescarPacientes() {
         cargarPacientes();
         JOptionPane.showMessageDialog(this, "Lista de pacientes actualizada");
     }
 
-    // ==========================================================
-    // CARGAR HISTORIAL DEL PACIENTE
-    // ==========================================================
+
     private void cargarHistorial() {
 
         Paciente paciente = (Paciente) comboPacientes.getSelectedItem();
@@ -152,9 +140,6 @@ public class PanelHistorial extends JPanel {
         cargarEstadisticasPaciente(paciente.getId());
     }
 
-    // ==========================================================
-    // ESTADÍSTICAS DEL PACIENTE
-    // ==========================================================
     private void cargarEstadisticasPaciente(int pacienteId) {
 
         DefaultTableModel m1 =
@@ -176,9 +161,6 @@ public class PanelHistorial extends JPanel {
         }
     }
 
-    // ==========================================================
-    // MOSTRAR SÍNTOMAS DE LA FILA SELECCIONADA
-    // ==========================================================
     private void mostrarSintomasSeleccion() {
         int filaSel = tablaHistorial.getSelectedRow();
         if (filaSel < 0) return;

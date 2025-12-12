@@ -23,9 +23,7 @@ public class PanelRegistrarPaciente extends JPanel {
         titulo.setFont(new Font("Arial", Font.BOLD, 22));
         add(titulo, BorderLayout.NORTH);
 
-        // -------------------------------
         // FORMULARIO
-        // -------------------------------
         JPanel panelForm = new JPanel();
         panelForm.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -51,9 +49,7 @@ public class PanelRegistrarPaciente extends JPanel {
 
         add(panelForm, BorderLayout.CENTER);
 
-        // -------------------------------
-        // BOTÓN REGISTRAR
-        // -------------------------------
+        // BOTON REGISTRAR
         JButton btnRegistrar = new JButton("Registrar Paciente");
         btnRegistrar.addActionListener(e -> registrarPaciente());
 
@@ -63,9 +59,6 @@ public class PanelRegistrarPaciente extends JPanel {
         add(panelBoton, BorderLayout.SOUTH);
     }
 
-    // ===========================================================
-    // MÉTODO: Registrar paciente
-    // ===========================================================
     private void registrarPaciente() {
         String nombre = txtNombre.getText().trim();
         String edadStr = txtEdad.getText().trim();

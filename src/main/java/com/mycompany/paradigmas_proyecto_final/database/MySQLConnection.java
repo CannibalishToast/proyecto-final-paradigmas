@@ -28,7 +28,7 @@ public class MySQLConnection {
         return instance;
     }
 
-    /** Abre la conexión si está cerrada */
+
     private void conectar() {
         try {
             if (connection == null || connection.isClosed()) {
@@ -40,7 +40,7 @@ public class MySQLConnection {
         }
     }
 
-    /** Devuelve siempre la misma conexión mientras siga viva */
+
     public Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {

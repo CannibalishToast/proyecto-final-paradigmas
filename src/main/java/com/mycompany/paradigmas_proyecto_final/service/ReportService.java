@@ -16,9 +16,6 @@ public class ReportService {
     private HistorialService historialService = new HistorialService();
     private PacienteDAO pacienteDAO = new PacienteDAO();
 
-    /**
-     * Genera un CSV con el historial del paciente seleccionado.
-     */
     public void generarReportePacienteCSV(int pacienteId, String rutaArchivo) throws Exception {
 
         Paciente p = pacienteDAO.getById(pacienteId);

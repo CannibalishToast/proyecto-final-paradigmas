@@ -18,9 +18,6 @@ public class HistorialService {
     private SintomaDAO sintomaDAO = new SintomaDAO();
     private EnfermedadDAO enfermedadDAO = new EnfermedadDAO();
 
-    /**
-     * Devuelve historial completo del paciente tal cual el DTO lo define.
-     */
     public List<HistorialDetallado> obtenerHistorialPaciente(int pacienteId) {
 
         List<Diagnostico> diagnos = diagnosticoDAO.getByPaciente(pacienteId);
@@ -72,9 +69,6 @@ public class HistorialService {
         return historial;
     }
 
-    /**
-     * Devuelve historial plano para tablas: cada enfermedad = 1 fila.
-     */
     public List<FilaHistorial> obtenerHistorialPlano(int pacienteId) {
 
         List<HistorialDetallado> historial = obtenerHistorialPaciente(pacienteId);
@@ -98,10 +92,6 @@ public class HistorialService {
         return filas;
     }
 
-    /**
-     * NUEVO:
-     * Devuelve filas listas para exportar a CSV (por paciente).
-     */
     public List<HistorialDetallado> obtenerHistorialParaReporte(int pacienteId) {
         return obtenerHistorialPaciente(pacienteId);
     }

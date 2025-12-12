@@ -70,9 +70,7 @@ public class PanelDiagnostico extends JPanel {
 
         add(panelIzquierdo, BorderLayout.WEST);
 
-        // ---------------------------------------------------------------------
         // PANEL DERECHO: Tabla de resultados
-        // ---------------------------------------------------------------------
         tablaResultados = new JTable();
         tablaResultados.setModel(new DefaultTableModel(
                 new Object[][]{},
@@ -84,9 +82,7 @@ public class PanelDiagnostico extends JPanel {
         add(scrollTabla, BorderLayout.CENTER);
     }
 
-    // =======================================================================================
-    // CARGA DE PACIENTES
-    // =======================================================================================
+
     private void cargarPacientes() {
         List<Paciente> pacientes = pacienteDAO.getAll();
         for (Paciente p : pacientes) {
@@ -94,9 +90,6 @@ public class PanelDiagnostico extends JPanel {
         }
     }
 
-    // =======================================================================================
-    // CARGA DE SÍNTOMAS
-    // =======================================================================================
     private void cargarSintomas() {
         List<Sintoma> sintomas = sintomaDAO.getAll();
         for (Sintoma s : sintomas) {
@@ -106,9 +99,8 @@ public class PanelDiagnostico extends JPanel {
         }
     }
 
-    // =======================================================================================
-    // EVENTO: Realizar diagnóstico CONECTADO AL SERVICE REAL
-    // =======================================================================================
+    // Realizar diagnóstico conectado a SERVICE REAL
+
     private void realizarDiagnostico() {
         Paciente paciente = (Paciente) comboPacientes.getSelectedItem();
         if (paciente == null) {
